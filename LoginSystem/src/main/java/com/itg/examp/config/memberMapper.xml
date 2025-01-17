@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper"> 
+<!-- 파일이름과 동일 resultType= 리턴타입, id    #을 씀 왜$쓰면 해킹당해-->
+	<insert id="signup" parameterType="memb">
+		INSERT INTO member VALUES (null,#{mid},password(#{mpw}),#{name},#{age},#{address})
+	</insert>
+	<select id="memberinfo" parameterType="string" resultType="memb">
+		SELECT mid,name,age,address FROM member where mid=#{mid} and mpw =password(#{mpx});
+	</select>
+	<select id="memberList" resultType="memb">
+		SELECT mid,name,age,address FROM member;
+	</select>
+</mapper>

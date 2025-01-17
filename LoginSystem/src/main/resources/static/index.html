@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <!-- 첫페이지-->
 <html>
-	<head>
-		<title>정보처리기사 로그인시스템 구현하기</title>
-		<meta charset="utf-8" />
-	</head>
-	<body>
-		<h2>정보처리기사 WAS 로그인 시스템 구현</h2>
-		<p>사용언어 : 자바, 서블릿, html, 자바스크립트, css, mybatis, mariadb</p>
-		<p>사용통합툴 : 이클립스, 스프링4 , VSC</p>
-		<div>
-			<div>
-				<label>아이디</label><input type="text" /> <br>
-				<label>비밀번호</label><input type="password" /> 
+
+<head>
+	<title>정보처리기사 로그인시스템 구현하기</title>
+	<meta charset="utf-8" />
+	<!-- 제이쿼리 3.x = 자바스크립트 동적 라이브러리 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div style="max-width: 1200px; border: 1px solid;">
+		<div style=" width: 500px ; margin: 0 auto;">
+			<h2>정보처리기사 WAS 로그인 시스템 구현</h2>
+			<p>사용언어 : 자바, 서블릿, html, 자바스크립트, css, mybatis, mariadb</p>
+			<p>사용통합툴 : 이클립스, 스프링4 , VSC</p>
+			<div id="container">
+				<div style="float: left; " class="sp">
+					<p><label>아이디</label><input type="text" /> </p>
+					<label>비밀번호</label><input type="password" />
+				</div>
+				<div style="float: left; padding: 15px;">
+					<button>로그인</button>
+				</div>
+				<p style="clear: both; text-align: right; " class="sp"><a href="signup.html">회원가입 </a> <a href="#">회원리스트
+						보기</a></p>
 			</div>
-			<div>
-				<button>로그인</button>
-			</div>
-			<p><a href="#">회원가입 </a> <a href="#">회원리스트 보기</a></p>
+
 		</div>
-	</body>
+	</div>
+
+</body>
+<script>
+
+</script>
+
+<style>
+	button {
+		color: black;
+		background-color: burlywood;
+		width: 6rem;
+		height: 3.8rem;
+	}
+
+	#container {
+		width: 25rem;
+		height: 8rem;
+		background-color: cadetblue;
+		padding: 0.5rem;
+	}
+
+	.p {
+		margin-bottom: 0.5rem;
+	}
+
+	label {
+		display: inline-block;
+		width: 6rem;
+
+	}
+</style>
+
 </html>
