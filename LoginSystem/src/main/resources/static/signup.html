@@ -7,72 +7,98 @@
     <title>회원가입</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
+
 <body>
-<h2 style="padding-left: 10%;">로그인시스템 회원가입</h2>
-<form action="/member/signup" method="post">
-    <fieldset>
-        <legend>회원정보입력</legend>
-        <p>
-            <label>ID</label> <input type="text" id="mid" name="mid" />
+    <h2 style="padding-left: 10%;">로그인시스템 회원가입</h2>
+    <form id="memform">
+        <!--form action="/member/signup" method="post"-->
+        <fieldset>
+            <legend>회원정보입력</legend>
+            <p><label>ID</label> <input type="text" id="mid" name="mid" /></p>
+            <p><label>비밀번호</label> <input type="password" id="mpw" name="mpw" />
+                <label>비번 확인</label><input type="password" />
+            </p>
+            <p><label>이름</label><input type="text" name="name" /></p>
+            <p><label>나이</label><input type="number" name="age" /></p>
+            <p><label>주소</label><input type="text" name="address" /></p>
+            <hr>
+            <p>
+                <!-- name 라디오 연동, id는 label 연동 -->
+                <label>성별</label>
+                <label for="male">남</label> <input type="radio" name="gender" value="1" id="male" />
+                <label for="fm">여</label> <input type="radio" name="gender" value="2" id="fm" />
+            </p>
+            <p>
+                <label>취미</label>
+                <label>등산</label><input type="checkbox" value="m" name="hobby" />
+                <label>ㅇ</label><input type="checkbox" value="f" name="hobby" />
+            </p>
+            <p>
+                <label>직업</label>
+                <select name="job">
+                    <option value="spo">스포츠</option>
+                    <option value="gov">공무원</option>
+                    <option value="edu">교육원</option>
+                    <option value="job">직장인</option>
+                </select>
+            </p>
+        </fieldset>
+        <p id="btn_contain">
+            <input type="submit" value="회원가입">
+            <input type="reset" value="다시입력">
         </p>
-        <p>
-            <label>비밀번호</label> <input type="password" id="mpw" name="mpw" />
-        </p>
-        <p>
-            <label>비번 확인</label><input type="password" />
-        </p>
-        <p>
-            <label>이름</label><input type="text" name="name" />
-        </p>
-        <p>
-            <label>나이</label>
-            <input type="number" name="age" />
-        </p>
-        <p>
-            <label>주소</label>
-            <input type="text" name="address" />
-        </p>
-        <hr>
-        <p>
-            <!-- name 라디오 연동, id는 label 연동 -->
-            <label>성별</label>
-            <label for="male">남</label>
-            <input type="radio" name="gender" value="1" id="male" />
-            <label for="fm">여</label>
-            <input type="radio" name="gender" value="2" id="fm" />
-
-        </p>
-        <p>
-            <label>취미</label>
-            <label>등산</label>
-            <input type="checkbox" value="m" name="hobby" />
-            <label>ㅇ</label>
-            <input type="checkbox" value="f" name="hobby" />
-        </p>
-        <p>
-            <label>직업</label>
-            <select name="job">
-                <option value="spo">스포츠</option>
-                <option value="gov">공무원</option>
-                <option value="edu">교육원</option>
-                <option value="job">직장인</option>
-            </select>
-        </p>
-
-    </fieldset>
-    <p id="btn_contain">
-        <input type="submit" value="회원가입">
-        <input type="reset" value="다시입력">
-    </p>
-</form>
+    </form>
 </body>
 <script>
+    /*  화면 진입시 배경에 컬러 랜덤으로 입히기
     let colors = ["red", "blue", "green", "gray", "orange", "baige", "white"];
     let r = parseInt(Math.random() * 8);
     //메모리 -> 레디
     $(function () {
         $("body").css("background-color", colors[r]);
     })
+    */
+
+    //submit시 json 형식으로 데이터 넘기기
+    $("#memform").on("submit", async (evt) => {
+        evt.preventDefault();      //기본 이벤트 삭제
+
+        // payload 용어 정리 패킷(네트워크 조각= 외부ip+port + 내 소스(자기주소 등 정보)) = header + 내용(payload),  
+        const payload = new FormData($("#memform")[0]) ;//ui 폼데이터 수집 //FormData 제이쿼리 바로 넣을수 없음 
+        //FormData(8) { mid → "testst1", mpw → "qweqwe", name → "ww", age → "33", address → "333", gender → "2", hobby → "f", job → "spo" }
+        //뺄대 : 
+        if (!payload.get("age") ){
+            payload.set("age", 100);
+        }
+        //서버의 데이터 전송
+        //ajax 실시간으로 넘겨줬는데, 실시간 통신을 fetch 내장되어 있음 삽입해
+        const res = await fetch("/member/signup", { method: "post", body: payload });
+        //res 서버가 응답할때 까지 기다림(promise 대기)
+        const data = await res.json(); //서버 응답시 json 데이터로 수신
+
+        /*
+          console.log(data);
+        Object { data: {…}, message: "회원가입" }
+            data: Object { id: 0, age: 33, mid: "testst1", … }
+                address: "333"
+                age: 33
+                id: 0
+                mid: "testst1"
+                mpw: ""
+                name: "ww"
+                <prototype>: Object { … }
+            message: "회원가입"
+            <prototype>: Object { … }
+        */
+        if (data.method = "회원가입") {
+            alert("회원가입이 성공하였습니다.")
+            location.href = "/"  // "/index.html"
+        }
+        else alert("회원가입 정보를 확인해주세요.")
+
+        return false;
+    });
+
 </script>
 <style>
     label {

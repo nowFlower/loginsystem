@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 
 @Service //본디 인터페이스 통해서 만들는데 여긴 패스
 public class MemberService {
+	
+	// 배치 testunit , 스케쥴
 	public boolean checkPassword(String password) {
 		if(password.length() >= 6) return true;
 		return false;
