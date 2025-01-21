@@ -90,11 +90,11 @@
             message: "회원가입"
             <prototype>: Object { … }
         */
-        if (data.method = "회원가입") {
+        if (data.method == "회원가입") {
             alert("회원가입이 성공하였습니다.")
             location.href = "/"  // "/index.html"
         }
-        else alert("회원가입 정보를 확인해주세요.")
+        else alert(data.message);
 
         return false;
     });
