@@ -11,16 +11,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
-//배치 환경설정 필요
-@Configuration  //먼저 읽는다
+//배치 환경설정 필요  생성자 빌더 패턴(Builder Pattern)을 활용하여 Spring Batch에서 Job과 Step을 구성
+@Configuration  //먼저 읽는다, 스프링 컨텍스트에 Bean으로 등록될 메서드들을 포함
 public class BatchConfiguration {
 	int count = 0;
 	
-	@Bean   //스프링3.0은 이게 안됨
+	@Bean   //스프링3.0은 이게 안됨  Job은 배치 작업의 최상위 개념  DI (의존성 주입): JobRepository와 Step 객체를 외부에서 주입받아 관리의 책임을 분리
 	public Job helloJob(JobRepository jobRepository,Step helloStep) {
-		return new JobBuilder("helloJob 작업했다", jobRepository)
-				.start(helloStep)
-				.build();
+		return new JobBuilder("helloJob 작업했다", jobRepository)  //Job을 생성하기 위한 빌더 클래스
+				.start(helloStep)  //Job이 시작할 때 실행할 Step을 설정합니다
+				.build();  //Job 객체를 최종적으로 생성
 	}
 	
 	@Bean
