@@ -10,11 +10,11 @@
 
 <body>
     <h2 style="padding-left: 10%;">로그인시스템 회원가입</h2>
-    <form id="memform">
+    <form id="memform" style="width: 1200px; margin: 0 auto; padding: 50px;">
         <!--form action="/member/signup" method="post"-->
         <fieldset>
             <legend>회원정보입력</legend>
-            <p><label>ID</label> <input type="text" id="mid" name="mid" /></p>
+            <p><label>ID</label> <input type="text" id="mid" name="mid" />&nbsp;&nbsp;&nbsp;<button id="idck" value="false" > ID 체크</button></p>
             <p><label>비밀번호</label> <input type="password" id="mpw" name="mpw" />
                 <label>비번 확인</label><input type="password" />
             </p>
@@ -31,7 +31,7 @@
             <p>
                 <label>취미</label>
                 <label>등산</label><input type="checkbox" value="m" name="hobby" />
-                <label>ㅇ</label><input type="checkbox" value="f" name="hobby" />
+                <label>야구</label><input type="checkbox" value="f" name="hobby" />
             </p>
             <p>
                 <label>직업</label>
@@ -43,7 +43,7 @@
                 </select>
             </p>
         </fieldset>
-        <p id="btn_contain">
+        <p id="btn_contain" style="padding-left: 542px;">
             <input type="submit" value="회원가입">
             <input type="reset" value="다시입력">
         </p>
@@ -58,11 +58,15 @@
         $("body").css("background-color", colors[r]);
     })
     */
-
+   // let idck = "idck".value();
     //submit시 json 형식으로 데이터 넘기기
     $("#memform").on("submit", async (evt) => {
         evt.preventDefault();      //기본 이벤트 삭제
-
+console.log();
+        // if(!$("#idck") ) {
+        //     alert("ID 체크 하세요.")
+        //     return false;
+        // }
         // payload 용어 정리 패킷(네트워크 조각= 외부ip+port + 내 소스(자기주소 등 정보)) = header + 내용(payload),  
         const payload = new FormData($("#memform")[0]) ;//ui 폼데이터 수집 //FormData 제이쿼리 바로 넣을수 없음 
         //FormData(8) { mid → "testst1", mpw → "qweqwe", name → "ww", age → "33", address → "333", gender → "2", hobby → "f", job → "spo" }
