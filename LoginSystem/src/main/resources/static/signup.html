@@ -14,7 +14,7 @@
         <!--form action="/member/signup" method="post"-->
         <fieldset>
             <legend>회원정보입력</legend>
-            <p><label>ID</label> <input type="text" id="mid" name="mid" />&nbsp;&nbsp;&nbsp;<button id="idck" value="false" > ID 체크</button></p>
+            <p><label>ID</label> <input type="text" id="mid" name="mid" />&nbsp;&nbsp;&nbsp;<button id="idChk" value="false" > ID 체크</button></p>
             <p><label>비밀번호</label> <input type="password" id="mpw" name="mpw" />
                 <label>비번 확인</label><input type="password" />
             </p>
@@ -58,15 +58,38 @@
         $("body").css("background-color", colors[r]);
     })
     */
-   // let idck = "idck".value();
+// 공통 함수 선언
+async function chk(url, selectorId) {
+    // 이벤트 리스너 등록
+    document.getElementById(selectorId).addEventListener("click", async () => {
+        const payload =new FormData($("#mid"));
+        try {
+            const res = await fetch("/member/idChk", { method: "post", body: payload }); // 요청 보냄
+            const data = await res.json(); // JSON 응답 처리
+
+            if (data.message === "통과") {
+                console.log("ID 체크 통과!");
+                return $("#idChk").val()= "true";
+            } else {
+                alert(data.message); 
+            }
+        } catch (error) {
+            console.error("에러 발생:", error);
+        }
+        return $("#idChk").val()= "false";
+    });
+}
+
+ 
     //submit시 json 형식으로 데이터 넘기기
     $("#memform").on("submit", async (evt) => {
         evt.preventDefault();      //기본 이벤트 삭제
-console.log();
-        // if(!$("#idck") ) {
-        //     alert("ID 체크 하세요.")
-        //     return false;
-        // }
+
+
+        if($("#idChk").val() === "false" ) {
+            alert("ID 체크 하세요.")
+            return false;
+        }
         // payload 용어 정리 패킷(네트워크 조각= 외부ip+port + 내 소스(자기주소 등 정보)) = header + 내용(payload),  
         const payload = new FormData($("#memform")[0]) ;//ui 폼데이터 수집 //FormData 제이쿼리 바로 넣을수 없음 
         //FormData(8) { mid → "testst1", mpw → "qweqwe", name → "ww", age → "33", address → "333", gender → "2", hobby → "f", job → "spo" }
