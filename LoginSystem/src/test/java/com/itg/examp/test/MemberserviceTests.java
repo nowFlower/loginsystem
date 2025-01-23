@@ -14,10 +14,7 @@ import com.itg.examp.MemberService;
 @SpringBootTest
 public class MemberserviceTests {
 	// 경계값 분석: boundary analize// 데이터 분석 할때 : 값 경계에서 오류가 가장 많이나서
-	String[] rightId;
-	String[] rightPw;
-	String[] wrongId;
-	String[] wrongPw;
+	String[] rightId, dupId,  wrongId, rightPw, wrongPw;
 
 	// 화이트 내부로직 보는거 for 등 조건문
 	// 블랙 -값 도출
@@ -28,6 +25,7 @@ public class MemberserviceTests {
 	public void setVariable() {
 		// 블랙박스 동시분할(동등분할)
 		rightId = new String[] { "aaaaa", "abbbbccdd", "abcd", "a@e12345", "bb#ddcc" };
+		dupId = new String[] { "aaaaa", "bb#" };
 		wrongId = new String[] { "aaa", "ab", "abc", "123", "bb#" };
 		rightPw = new String[] { "aaaa12", "abbbbccdd", "abcd##", "a@e12345", "bb#ddcc" };
 		wrongPw = new String[] { "aaaa", "ab3", "abcd", "a@e12", "bb#dd" };
@@ -37,11 +35,11 @@ public class MemberserviceTests {
 	@Test
 	public void testId() {
 		boolean res = false;
-//		for (int idx = 0; idx < rightId.length; idx++) {  
-//			String id = rightId[idx];
-//			res = ms.checkId(id);
-//			assertEquals(true, res, idx + "올바른 아이디입니다."); // assertEquals 비교test 함수 = res가 true면 메세지
-//		}
+		for (int idx = 0; idx < rightId.length; idx++) {  
+			String id = rightId[idx];
+			res = ms.checkId(id);
+			assertEquals(true, res, idx + "올바른 아이디입니다."); // assertEquals 비교test 함수 = res가 true면 메세지
+		}
 		for (String id : wrongId) {  //이거 쓰면 몇번 index가 고장인지 파악이 안되서 위처럼 써야 파악 됨
 			res = ms.checkId(id);
 			assertEquals(false, res, "잘못된 아이디입니다.");
@@ -60,4 +58,5 @@ public class MemberserviceTests {
 			assertEquals(false, res, "잘못된 비번입니다.");
 		}
 	}
+
 }

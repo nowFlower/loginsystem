@@ -86,10 +86,10 @@ async function chk(url, selectorId) {
         evt.preventDefault();      //기본 이벤트 삭제
 
 
-        if($("#idChk").val() === "false" ) {
-            alert("ID 체크 하세요.")
-            return false;
-        }
+        // if($("#idChk").val() === "false" ) {
+        //     alert("ID 체크 하세요.")
+        //     return false;
+        // }
         // payload 용어 정리 패킷(네트워크 조각= 외부ip+port + 내 소스(자기주소 등 정보)) = header + 내용(payload),  
         const payload = new FormData($("#memform")[0]) ;//ui 폼데이터 수집 //FormData 제이쿼리 바로 넣을수 없음 
         //FormData(8) { mid → "testst1", mpw → "qweqwe", name → "ww", age → "33", address → "333", gender → "2", hobby → "f", job → "spo" }

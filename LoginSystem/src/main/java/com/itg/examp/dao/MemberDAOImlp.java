@@ -15,7 +15,6 @@ public class MemberDAOImlp implements MemberDAO {
 	
 	@Override
 	public int singupMember(MemberDTO member) {
-		System.out.println("member"+ member);
 		int res =session.insert("memberMapper.signup", member);   //리턴은 int
 		return res;
 	}

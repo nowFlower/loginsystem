@@ -73,7 +73,7 @@ return true;
 	public Map<String, Object> singin(HttpServletRequest request, @RequestBody Map<String, String> logindata) {
 		HashMap<String, Object> hm = new HashMap<>();
 		MemberDTO member = dao.signinMember(logindata);
-		System.out.println("member" + member);
+		System.out.println("logindata" + logindata);
 		if (member != null) {
 			// 로그인 검증
 			HttpSession auth = request.getSession(true); // true = 세션을 만듬, true 안하면 로그인 했는지 체크
