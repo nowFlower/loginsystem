@@ -58,6 +58,16 @@ public class MemberController {
 		return hm;
 	}
 
+	@PostMapping("/idchk") // post json 형태로
+	public boolean idchk(@RequestBody Map<String, String> logindata) {
+				//HashMap<String, Object> hm = new HashMap<>();
+				MemberDTO member = dao.idchk(logindata);
+			//	if()
+return true;
+			}
+
+	
+	
 	// HttpServletRequest 클라이트 요청 정보(쿠키, 세션 저장)
 	@PostMapping("/login")
 	public Map<String, Object> singin(HttpServletRequest request, @RequestBody Map<String, String> logindata) {

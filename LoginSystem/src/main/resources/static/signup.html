@@ -64,11 +64,11 @@ async function chk(url, selectorId) {
     document.getElementById(selectorId).addEventListener("click", async () => {
         const payload =new FormData($("#mid"));
         try {
-            const res = await fetch("/member/idChk", { method: "post", body: payload }); // 요청 보냄
+            const res = await fetch("/member/idchk", { method: "post", body: payload }); // 요청 보냄
             const data = await res.json(); // JSON 응답 처리
 
             if (data.message === "통과") {
-                console.log("ID 체크 통과!");
+           //     console.log("ID 체크 통과!");
                 return $("#idChk").val()= "true";
             } else {
                 alert(data.message); 

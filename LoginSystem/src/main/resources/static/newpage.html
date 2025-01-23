@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>정보처리기사 로그인시스템 구현하기</title>
+	<meta charset="utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="common.js"></script>
+</head>
+
+<body>
+	<h1>공통모듈 작동 페이지</h1>
+	<div id="uicontainer">
+		<label>아이디 <input type="text" id="myid"></label>
+		<label>비밀번호 <input type="password" id="mypw"></label>
+		<button id="signin">로그인</button>
+	</div>
+
+	<a href="#" id="logoutcontainer"></a>
+</body>
+<script>
+	const id = $("#myid").val();
+	const pw = $("#mypw").val();
+
+	$("#signin").click(async () => {
+		console.log( id+" : "+ pw)
+		const data = await login($("#myid").val(), $("#mypw").val())
+		
+		console.log( data )
+		if (data.message = "로그인성공") {
+			$("#uicontainer").html(`${data.member.mid}(${data.member.name})님 환영합니다.`); 
+			logout($("#logoutcontainer"))
+		} else alert(data.message);
+	})
+
+</script>
+</html>

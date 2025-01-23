@@ -11,6 +11,7 @@ public interface MemberDAO {
 	public MemberDTO signinMember(Map<String, String> data) ;
 	//회원리스트 조회시 리스트 출력
 	public List<MemberDTO> memberList() ;
-	
+	//회원아이디 중복체크
+	public MemberDTO idchk(Map<String, String> data) ;
 	
 }

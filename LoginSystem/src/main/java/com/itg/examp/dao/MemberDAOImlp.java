@@ -32,4 +32,10 @@ public class MemberDAOImlp implements MemberDAO {
 		return list;
 	}
 
+	@Override
+	public MemberDTO idchk(Map<String, String> data) {
+
+		return null;
+	}
+
 }
