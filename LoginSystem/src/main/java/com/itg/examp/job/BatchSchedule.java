@@ -19,7 +19,7 @@ public class BatchSchedule {
 	@Autowired
 	private final JobLauncher jobLauncher= null; //helloJob 실행함
 	
-	@Scheduled(cron="0 0 0 1 * ?")  //cron = "초 분 시 일 월 요일 년도" 0/10  = 10초당 1번씩,  ?는 년도 상관없음
+	@Scheduled(cron="0 5 * * * ?")  //cron = "초 분 시 일 월 요일 년도" 0/10  = 10초당 1번씩,  ?는 년도 상관없음
 	public void runJob() {
 		System.out.println("스케쥴 시작 ===============");
 		try {

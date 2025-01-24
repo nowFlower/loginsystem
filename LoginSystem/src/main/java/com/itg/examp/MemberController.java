@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.reflection.SystemMetaObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,12 +32,10 @@ public class MemberController {
 
 	@PostMapping("/signup") // post json 형태로
 	public Map<String, Object> singupMember(MemberDTO member) {
-
 		// 자바스크립트 점검 + 해킹막고자 또 함 //id는 4글자, pw 6글자 => 서비스객체
 		boolean ckid = serive.checkId(member.getMid());
 		boolean ckpw = serive.checkPassword(member.getMpw());
 		HashMap<String, Object> hm = new HashMap<>();
-
 		if (!ckid) {
 			hm.put("message", "아이디를 점검하세요");
 			return hm; // if문에서는 break안됨, return을 사용
@@ -45,7 +44,6 @@ public class MemberController {
 			hm.put("message", "비밀번호를 점검하세요");
 			return hm;
 		}
-
 		// 데이터
 		int res = dao.singupMember(member);
 		if (res == 1) {
@@ -53,21 +51,19 @@ public class MemberController {
 			hm.put("message", "회원가입");
 			member.setMpw("");
 			hm.put("data", member);
-		} else hm.put("message", "회원가입실패");
+		} else
+			hm.put("message", "회원가입실패");
 
 		return hm;
 	}
 
 	@PostMapping("/idchk") // post json 형태로
 	public boolean idchk(@RequestBody Map<String, String> logindata) {
-				//HashMap<String, Object> hm = new HashMap<>();
-				MemberDTO member = dao.idchk(logindata);
-			//	if()
-return true;
-			}
+		System.out.println("중복" +dao.idchk(logindata));
+		if (dao.idchk(logindata) == 0) return true;
+		return false;
+	}
 
-	
-	
 	// HttpServletRequest 클라이트 요청 정보(쿠키, 세션 저장)
 	@PostMapping("/login")
 	public Map<String, Object> singin(HttpServletRequest request, @RequestBody Map<String, String> logindata) {
@@ -82,7 +78,8 @@ return true;
 			// auth.getAttribute("mid"); //로그아웃하기 전까지 꺼내서 씀
 			hm.put("message", "로그인성공");
 			hm.put("member", member);
-		} else hm.put("message", "아이디와 비번 확인");
+		} else
+			hm.put("message", "아이디와 비번 확인");
 
 		return hm;
 	}
@@ -101,7 +98,8 @@ return true;
 	public Map listview(HttpServletRequest request) {
 		HttpSession auth = request.getSession(); // 확인
 		HashMap<String, Object> hm = new HashMap<>();
-		if (auth == null)hm.put("message", "로그인 해주세요");
+		if (auth == null)
+			hm.put("message", "로그인 해주세요");
 		else {
 			List<MemberDTO> list = dao.memberList();
 			System.out.println(list);

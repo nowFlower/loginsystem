@@ -4,7 +4,6 @@
 <head>
 	<title>정보처리기사 로그인시스템 구현하기</title>
 	<meta charset="utf-8" />
-	<!-- 제이쿼리 3.x = 자바스크립트 동적 라이브러리 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="common.js"></script>
 </head>
@@ -34,9 +33,7 @@
 			<br>
 			<a href="newpage.html" >분리된 공통모듈 테스트</a>
 		</div>
-
 	</div>
-
 	<div id="listContain" style="display: none; max-width: 1200px; border: 1px solid;">
 		<hr>
 		<p>회원리스트 인원 : <span id="mcnt"> </span></p>
@@ -44,7 +41,6 @@
 	</div>
 </body>
 <script>
-	// ()=>{} 콜백함수  //async 비동기 통신
 	// 로그인
 	$("#signin").on("click", async () => {
 		let data = await login($("#mid").val(), $("#mpw").val()) //로그인 비동기 동신
@@ -62,19 +58,15 @@
 		const data = await res.json();
 		console.log(data);
 		if (data.message == "회원 리스트 수신") {
-
 			$("#mcnt").text(data.members.length);
 			//map 배열을 새롭게 리턴  //obj index
-			const viewText = data.members.map((obj, index) => `<p>${index + 1}  아이디 :${obj.mid} 이름 :${obj.name} 나이 :${obj.age} 주소 :${obj.address}</p>`)
-			console.log(viewText);//[ "<p> 아이디 :12345 이름 : 이길동 22 없음</p>", "<p> 아이디 :mmmm 이름 : nana 22 dr</p>"" ]
-			//배열을 .join("") "" 문자화
-			$("#listindex").html(viewText.join(""));
+			const viewText = data.members.map((obj, index) => `<p>${index + 1}  아이디 :${obj.mid} 이름 :${obj.name} 나이 :${obj.age} 주소 :${obj.address}</p>`)			
+			$("#listindex").html(viewText.join("")); //배열을 .join("") "" 문자화
 			$("#listContain").css("display", "block");
 		} else {
 			alert(data.message);
 		}
 	})
-
 </script>
 
 <style>

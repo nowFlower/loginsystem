@@ -11,4 +11,7 @@
 	<select id="memberList" resultType="memb">
 		SELECT mid,name,age,address FROM member;
 	</select>
+	<select id="idchk" parameterType="string"  resultType="Integer">
+		SELECT count(mid) FROM member where mid=#{mid};
+	</select>
 </mapper>

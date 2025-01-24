@@ -14,8 +14,7 @@
         <!--form action="/member/signup" method="post"-->
         <fieldset>
             <legend>회원정보입력</legend>
-            <p><label>ID</label> <input type="text" id="mid" name="mid" />&nbsp;&nbsp;&nbsp;<button id="idChk"
-                    value="false"> ID 중복체크</button></p>
+            <p><label>ID</label> <input type="text" id="mid" name="mid" />&nbsp;&nbsp;&nbsp;<button id="idChk" value="false" > ID 체크</button></p>
             <p><label>비밀번호</label> <input type="password" id="mpw" name="mpw" />
                 <label>비번 확인</label><input type="password" />
             </p>
@@ -51,31 +50,51 @@
     </form>
 </body>
 <script>
-    //중복체크
-    async function chk() {
-        const logindate = { mid: $("#mid").val() } //id 값
-        const res = await fetch("/member/idchk", { method: "post", headers: { "Content-type": "application/json" }, body: JSON.stringify(logindate) }); // 요청 보냄
-        const data = await res.json(); // JSON 응답 처리
-        return data;
-    }
+    /*  화면 진입시 배경에 컬러 랜덤으로 입히기
+    let colors = ["red", "blue", "green", "gray", "orange", "baige", "white"];
+    let r = parseInt(Math.random() * 8);
+    //메모리 -> 레디
+    $(function () {
+        $("body").css("background-color", colors[r]);
+    })
+    */
+// 공통 함수 선언
+async function chk(url, selectorId) {
+    // 이벤트 리스너 등록
+    document.getElementById(selectorId).addEventListener("click", async () => {
+        const payload =new FormData($("#mid"));
+        try {
+            const res = await fetch("/member/idchk", { method: "post", body: payload }); // 요청 보냄
+            const data = await res.json(); // JSON 응답 처리
 
-    $("#idChk").click(async () => {
-        const data = await chk();
-        if (data) return $("#idChk").val("true");
-        else {
-            alert("ID 체크 하세요.")
-            return $("#idChk").val("false")
+            if (data.message === "통과") {
+           //     console.log("ID 체크 통과!");
+                return $("#idChk").val()= "true";
+            } else {
+                alert(data.message); 
+            }
+        } catch (error) {
+            console.error("에러 발생:", error);
         }
+        return $("#idChk").val()= "false";
     });
+}
 
+ 
     //submit시 json 형식으로 데이터 넘기기
     $("#memform").on("submit", async (evt) => {
         evt.preventDefault();      //기본 이벤트 삭제
 
-        if(!chk())  return false;
 
-        const payload = new FormData($("#memform")[0]);//FormData 제이쿼리 바로 넣을수 없음 
-        if (!payload.get("age")) {
+        if($("#idChk").val() === "false" ) {
+            alert("ID 체크 하세요.")
+            return false;
+        }
+        // payload 용어 정리 패킷(네트워크 조각= 외부ip+port + 내 소스(자기주소 등 정보)) = header + 내용(payload),  
+        const payload = new FormData($("#memform")[0]) ;//ui 폼데이터 수집 //FormData 제이쿼리 바로 넣을수 없음 
+        //FormData(8) { mid → "testst1", mpw → "qweqwe", name → "ww", age → "33", address → "333", gender → "2", hobby → "f", job → "spo" }
+        //뺄대 : 
+        if (!payload.get("age") ){
             payload.set("age", 100);
         }
         //서버의 데이터 전송
@@ -83,7 +102,22 @@
         const res = await fetch("/member/signup", { method: "post", body: payload });
         //res 서버가 응답할때 까지 기다림(promise 대기)
         const data = await res.json(); //서버 응답시 json 데이터로 수신
-        if (data.message == "회원가입") {
+
+        /*
+          console.log(data);
+        Object { data: {…}, message: "회원가입" }
+            data: Object { id: 0, age: 33, mid: "testst1", … }
+                address: "333"
+                age: 33
+                id: 0
+                mid: "testst1"
+                mpw: ""
+                name: "ww"
+                <prototype>: Object { … }
+            message: "회원가입"
+            <prototype>: Object { … }
+        */
+        if (data.method == "회원가입") {
             alert("회원가입이 성공하였습니다.")
             location.href = "/"  // "/index.html"
         }

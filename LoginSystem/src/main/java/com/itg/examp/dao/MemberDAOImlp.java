@@ -32,9 +32,9 @@ public class MemberDAOImlp implements MemberDAO {
 	}
 
 	@Override
-	public MemberDTO idchk(Map<String, String> data) {
-
-		return null;
+	public int idchk(Map<String, String> data) {
+		int count = session.selectOne("memberMapper.idchk", data);
+		return count;
 	}
 
 }
