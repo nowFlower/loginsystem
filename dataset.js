@@ -51,24 +51,24 @@ let d2 = new DataSet("2. 공통모듈 구현")//메인타이틀
 
 d2.set_content("2.1 공통모듈구현")
 d2.set_img(0,{imgtitle:"공통모듈.js",imgurl:"https://drive.google.com/file/d/1x497FIbxdC74JGRuviW-Fx-8a0Tg69iT/view?usp=drive_link",imglog:"공통모듈로 분리",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/common.js"})
-d2.set_img(1,{imgtitle:"로그인 UI 연동",imgurl:"https://drive.google.com/file/d/1RGXQy1vTL1ouCCN3_agwq0e6V0LPswRC/view?usp=drive_link",imglog:"공통모듈을 사용해서 기존의 코드가 단축되었다",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/newpage.html"})
-d2.set_img(1,{imgtitle:"로그인 공통모듈쓴 코드 비교",imgurl:"https://drive.google.com/file/d/14NbvHBlEbHYJ-qa4dHZwOCbvh_squdBl/view?usp=drive_link",imglog:"공통모듈을 사용해서 기존의 코드가 단축되었다",sourceurl:"https://docs.google.com/document/d/1l6SyK4IQK2zXYRP9_wThZpSGJLcctEyjIthHCDhVtPA/edit?usp=drive_link"})
-d2.set_img(1,{imgtitle:"로그아웃 UI 연동",imgurl:"https://drive.google.com/file/d/1bRcFJ4yLJ4xDgQ9Xo0VAlXR6xIuxcW81/view?usp=drive_link",imglog:"",sourceurl:""})
-d2.set_img(1,{imgtitle:"로그아웃 공통모듈쓴 코드",imgurl:"https://drive.google.com/file/d/1jHX6W_td3RAmuTfu_UzbPXcGfXcQ0sMy/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/1IsVKtNBmVD9BpVVXPPymPg5DbghTFMdh9aGeG7hJHtE/edit?usp=drive_link"})
+d2.set_img(0,{imgtitle:"로그인 UI 연동",imgurl:"https://drive.google.com/file/d/1RGXQy1vTL1ouCCN3_agwq0e6V0LPswRC/view?usp=drive_link",imglog:"공통모듈을 사용해서 기존의 코드가 단축되었다",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/newpage.html"})
+d2.set_img(0,{imgtitle:"로그인 공통모듈쓴 코드 비교",imgurl:"https://drive.google.com/file/d/14NbvHBlEbHYJ-qa4dHZwOCbvh_squdBl/view?usp=drive_link",imglog:"공통모듈을 사용해서 기존의 코드가 단축되었다",sourceurl:"https://docs.google.com/document/d/1l6SyK4IQK2zXYRP9_wThZpSGJLcctEyjIthHCDhVtPA/edit?usp=drive_link"})
+d2.set_img(0,{imgtitle:"로그아웃 UI 연동",imgurl:"https://drive.google.com/file/d/1bRcFJ4yLJ4xDgQ9Xo0VAlXR6xIuxcW81/view?usp=drive_link",imglog:"",sourceurl:""})
+d2.set_img(0,{imgtitle:"로그아웃 공통모듈쓴 코드",imgurl:"https://drive.google.com/file/d/1jHX6W_td3RAmuTfu_UzbPXcGfXcQ0sMy/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/1IsVKtNBmVD9BpVVXPPymPg5DbghTFMdh9aGeG7hJHtE/edit?usp=drive_link"})
 
 d2.set_content("2.2 테스트케이스 작성")
-d2.set_img(2,{imgtitle:"경계값분석테스트 실행",imgurl:"https://drive.google.com/file/d/1nFg_9imCyFyBRMWDHtfnA2RL9neMrwuh/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/1DmO7gFZ6MmepNDXFkDgcBxV6UD30dSa2umTUJ2R9ObE/edit?tab=t.0"})
-d2.set_img(2,{imgtitle:"Id/pw Service테스트 ",imgurl:"https://drive.google.com/file/d/1PQij6dvxS8vyEfpYEyELEXgvf1Uusk7j/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/test/java/com/itg/examp/test/MemberserviceTests.java"})
-d2.set_img(2,{imgtitle:"로그인 DAO테스트 ",imgurl:"https://drive.google.com/file/d/15AWS2RxEotJHbgHI-RJVHuXU8FQRCZHt/view?usp=drive_link",imglog:"",sourceurl:""})
+d2.set_img(1,{imgtitle:"경계값분석테스트 실행",imgurl:"https://drive.google.com/file/d/1nFg_9imCyFyBRMWDHtfnA2RL9neMrwuh/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/1DmO7gFZ6MmepNDXFkDgcBxV6UD30dSa2umTUJ2R9ObE/edit?tab=t.0"})
+d2.set_img(1,{imgtitle:"Id/pw Service테스트 ",imgurl:"https://drive.google.com/file/d/1PQij6dvxS8vyEfpYEyELEXgvf1Uusk7j/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/test/java/com/itg/examp/test/MemberserviceTests.java"})
+d2.set_img(1,{imgtitle:"로그인 DAO테스트 ",imgurl:"https://drive.google.com/file/d/15AWS2RxEotJHbgHI-RJVHuXU8FQRCZHt/view?usp=drive_link",imglog:"",sourceurl:""})
 
 d2.set_content("2.3 단위테스트")
-d2.set_img(3,{imgtitle:"Id/pw Service 테스트 성공",imgurl:"https://drive.google.com/file/d/1NVNav5jBg6BI0ibMbvvpHL6VfRKRvZ-u/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/test/java/com/itg/examp/test/MemberserviceTests.java"})
-d2.set_img(3,{imgtitle:"junit 로그인 기능 실패",imgurl:"https://drive.google.com/file/d/19GwkpfYFgYV1If9mla6YG0FE6h0HhJUk/view?usp=drive_link",imglog:"타입을 맞추기 못해서 실패",sourceurl:""})
-d2.set_img(3,{imgtitle:"junit 로그인 기능 성공",imgurl:"https://drive.google.com/file/d/1h52AMhgyWn5DshSbwbvh7WA-V2cdciJn/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/test/java/com/itg/examp/test/MemberDAOTests.java"})
+d2.set_img(2,{imgtitle:"Id/pw Service 테스트 성공",imgurl:"https://drive.google.com/file/d/1NVNav5jBg6BI0ibMbvvpHL6VfRKRvZ-u/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/test/java/com/itg/examp/test/MemberserviceTests.java"})
+d2.set_img(2,{imgtitle:"junit 로그인 기능 실패",imgurl:"https://drive.google.com/file/d/19GwkpfYFgYV1If9mla6YG0FE6h0HhJUk/view?usp=drive_link",imglog:"타입을 맞추기 못해서 실패",sourceurl:""})
+d2.set_img(2,{imgtitle:"junit 로그인 기능 성공",imgurl:"https://drive.google.com/file/d/1h52AMhgyWn5DshSbwbvh7WA-V2cdciJn/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/test/java/com/itg/examp/test/MemberDAOTests.java"})
 //d2.set_img(3,{imgtitle:"junit 로그인아웃 기능",imgurl:"https://drive.google.com/file/d/1h52AMhgyWn5DshSbwbvh7WA-V2cdciJn/view?usp=drive_link",imglog:"",sourceurl:""})
 
 d2.set_content("2.4 테스트케이스를 결과보고서")
-d2.set_img(4,{imgtitle:"경계값분석테스트 실행",imgurl:"https://drive.google.com/file/d/1tsl4V8wYNmczvIkl_4kJ1IoWJRTep7YZ/view?usp=drive_link",imglog:"테스트케이스를 결과보고서 작성합니다.",sourceurl:"https://docs.google.com/document/d/167JnTRnJ9u-jXaOaEs79HJLqgj8bYDsoTxbKFn9orOE/edit?usp=drive_link"})
+d2.set_img(3,{imgtitle:"경계값분석테스트 실행",imgurl:"https://drive.google.com/file/d/1tsl4V8wYNmczvIkl_4kJ1IoWJRTep7YZ/view?usp=drive_link",imglog:"테스트케이스를 결과보고서 작성합니다.",sourceurl:"https://docs.google.com/document/d/167JnTRnJ9u-jXaOaEs79HJLqgj8bYDsoTxbKFn9orOE/edit?usp=drive_link"})
 
 d2.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d2)
