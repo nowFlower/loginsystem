@@ -80,7 +80,7 @@ data_sets.push(d2)
 let d3 = new DataSet("서버프로그램구현")//메인타이틀
 d3.set_content("서버프로그램구현 작성합니다.")
 d3.set_img(0,{imgtitle:"index화면 UI",imgurl:"https://drive.google.com/file/d/1v3tNGLHPjCoeB9I02jSL-faYoPR4kixj/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/index.html"})
-//d3.set_img(0,{imgtitle:"구현프로그램",imgurl:"",imglog:"각 기능 정리",sourceurl:""})
+d3.set_img(0,{imgtitle:"MVC 패턴",imgurl:"https://drive.google.com/file/d/1J7hqiS-TI2pr0a9pNfdcrYi-hIrlgCCf/view?usp=drive_link",imglog:"계층형 설계 패턴",sourceurl:"https://docs.google.com/document/d/1Wld6nh3wphM3-6lpgs371pCg9Oa2-3g2cywBGTHMJJo/edit?usp=drive_link"})
 d3.set_img(0,{imgtitle:"회원DTO",imgurl:"https://drive.google.com/file/d/1sYWSqs7VrqxjtgsldYjEWQ-ZqXs7CrkZ/view?usp=drive_link",imglog:"회원 데이터 객체",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/dto/MemberDTO.java"})
 d3.set_img(0,{imgtitle:"회원Controller",imgurl:"https://drive.google.com/file/d/1J9SGM3KSm2CKQ7k9hUtUWWqbNAtJVrsQ/view?usp=drive_link",imglog:"사용자 요청 처리 후 화면단 넘김",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/MemberController.java"})
 d3.set_img(0,{imgtitle:"회원Service",imgurl:"https://drive.google.com/file/d/1NyARHHrAFX9ePvKkSr7wKd0OM4fgftc7/view?usp=drive_link",imglog:"비즈니스 로직과 트랜잭션을 처리",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/MemberService.java"})
@@ -99,6 +99,7 @@ d3.set_img(1,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuq
 d3.set_img(1,{imgtitle:"회원가입DAOImp",imgurl:"https://drive.google.com/file/d/1l4So1uHEDP7k-V7JULrNOvEKdaYPRzdC/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(2,{imgtitle:"mapper",imgurl:"https://drive.google.com/file/d/1ZQT__uY3rLsK5mi8YfUejSv66_PgUrFd/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"회원가입성공",imgurl:"https://drive.google.com/file/d/1Qyx4wbbb60_UZGvlPJYxvI5yTyUCL3v8/view?usp=drive_link",imglog:"",sourceurl:""})
+d3.set_img(1,{imgtitle:"회원가입 데이터",imgurl:"https://drive.google.com/file/d/1GTTXpvgB2Zkdq3lRFKbn2Y_HJvWx23_e/view?usp=drive_link",imglog:"",sourceurl:""})
 
 d3.set_content("회원로그인구현")
 d3.set_img(2,{imgtitle:"로그인UI",imgurl:"https://drive.google.com/file/d/11LJ8Qvu-fFbu6HV6XlHq-AbJmFD35zlm/view?usp=drive_link",imglog:"로그인소스코드",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/index.html"})
@@ -154,3 +155,4 @@ d4.set_img(1,{imgtitle:"배치스케줄구현",imgurl:"https://drive.google.com/
 
 d4.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d4)
+
