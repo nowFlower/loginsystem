@@ -142,12 +142,13 @@ data_sets.push(d3)
 
 // menu4 =============================================================
 let d4 = new DataSet("4. 배치프로그램구현")//메인타이틀
-d4.set_content("4.1 배치스케줄구성 및 테스트")
+d4.set_content("4.1 배치스케줄구성") // 및 테스트
 d4.set_img(0,{imgtitle:"BatchConfiguration",imgurl:"https://drive.google.com/file/d/1DVe79t54A_V36CATWF9hCTN2Vnm8PU2T/view?usp=drive_link",imglog:"배치환경설정",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/job/BatchConfiguration.java"})
 d4.set_img(0,{imgtitle:"BatchSchedule",imgurl:"https://drive.google.com/file/d/1IUY6ZCwU_es7oxZG6jcl-36SkMtenqy7/view?usp=drive_link",imglog:"5분마다 스케쥴링",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/job/BatchSchedule.java"})
 
 d4.set_content("4.2 배치스케줄구현")//서브타이틀
 d4.set_img(1,{imgtitle:"Spring 배치 돈거 확인",imgurl:"https://drive.google.com/file/d/1apKc-xopTFQ3-VPa6xxojI06jePVONW8/view?usp=drive_link",imglog:"",sourceurl:""})
+d4.set_img(1,{imgtitle:"5분마다 스케쥴링",imgurl:"https://drive.google.com/file/d/10zLsHFhZ-R0SwVbkJhICsx0pUOsnsY62/view?usp=drive_link",imglog:"",sourceurl:""})
 d4.set_img(1,{imgtitle:"배치DB table",imgurl:"https://drive.google.com/file/d/1HDfRXfqxkHhtujtwy84-gaLkVU3RCJBR/view?usp=drive_link",imglog:"DB에 배치테이블 생성",sourceurl:""})
 
 d4.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
