@@ -39,15 +39,15 @@ d1.set_img(2,{imgtitle:"개발도구 Spring for Eclipse",imgurl:"https://drive.g
 d1.set_img(2,{imgtitle:"빌드도구 gradle",imgurl:"https://drive.google.com/file/d/1KuDFBZuAvaqsAsGO0UGY68j3eBcz1C7f/view?usp=drive_link",imglog:"프로그램 빌드 및 외부 라이브러리 디펜더시를 위한 도구",sourceurl:""})//이미지타이틀
 d1.set_img(2,{imgtitle:"형상관리도구 git",imgurl:"https://drive.google.com/file/d/1qkQ-ransk5OOFMuLP3GOImO1FCmZ6H1m/view?usp=drive_link",imglog:"프로그램의 전반적인 개발협업 및 버전관를 위한 도구",sourceurl:""})//이미지타이틀
 
-d1.set_fill("서버의 보안성과 각 수행기능별 패턴을 분리하기 위해 Spring WAS 와 사용자 View 기능을 위해 웹브라우져에서 일반적인 작동이 가능한 HTML5 를 구현하며 데이터베이스 연동 대신 파일로 회원목록 저장")//사용자 에필로그
+//d1.set_fill("서버의 보안성과 각 수행기능별 패턴을 분리하기 위해 Spring WAS 와 사용자 View 기능을 위해 웹브라우져에서 일반적인 작동이 가능한 HTML5 를 구현하며 데이터베이스 연동 대신 파일로 회원목록 저장")//사용자 에필로그
 data_sets.push(d1)
 
 // menu2 =============================================================
 let d2 = new DataSet("2. 공통모듈 구현")//메인타이틀
 d2.set_content("2.1 공통모듈구현")
-d2.set_img(0,{imgtitle:"공통모듈.js",imgurl:"https://drive.google.com/file/d/1x497FIbxdC74JGRuviW-Fx-8a0Tg69iT/view?usp=drive_link",imglog:"공통모듈로 분리",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/common.js"})
-d2.set_img(0,{imgtitle:"로그인 UI 연동",imgurl:"https://drive.google.com/file/d/1RGXQy1vTL1ouCCN3_agwq0e6V0LPswRC/view?usp=drive_link",imglog:"공통모듈을 사용해서 기존의 코드가 단축되었다",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/newpage.html"})
-d2.set_img(0,{imgtitle:"로그인 공통모듈쓴 코드 비교",imgurl:"https://drive.google.com/file/d/14NbvHBlEbHYJ-qa4dHZwOCbvh_squdBl/view?usp=drive_link",imglog:"공통모듈을 사용해서 기존의 코드가 단축되었다",sourceurl:"https://docs.google.com/document/d/1l6SyK4IQK2zXYRP9_wThZpSGJLcctEyjIthHCDhVtPA/edit?usp=drive_link"})
+d2.set_img(0,{imgtitle:"공통모듈.js",imgurl:"https://drive.google.com/file/d/1x497FIbxdC74JGRuviW-Fx-8a0Tg69iT/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/common.js"})
+d2.set_img(0,{imgtitle:"로그인 UI 연동",imgurl:"https://drive.google.com/file/d/1RGXQy1vTL1ouCCN3_agwq0e6V0LPswRC/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/newpage.html"})
+d2.set_img(0,{imgtitle:"로그인 공통모듈쓴 코드 비교",imgurl:"https://drive.google.com/file/d/14NbvHBlEbHYJ-qa4dHZwOCbvh_squdBl/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/1l6SyK4IQK2zXYRP9_wThZpSGJLcctEyjIthHCDhVtPA/edit?usp=drive_link"})
 d2.set_img(0,{imgtitle:"로그아웃 UI 연동",imgurl:"https://drive.google.com/file/d/1bRcFJ4yLJ4xDgQ9Xo0VAlXR6xIuxcW81/view?usp=drive_link",imglog:"",sourceurl:""})
 d2.set_img(0,{imgtitle:"로그아웃 공통모듈쓴 코드",imgurl:"https://drive.google.com/file/d/1jHX6W_td3RAmuTfu_UzbPXcGfXcQ0sMy/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/1IsVKtNBmVD9BpVVXPPymPg5DbghTFMdh9aGeG7hJHtE/edit?usp=drive_link"})
 
@@ -63,9 +63,9 @@ d2.set_img(2,{imgtitle:"junit 로그인 기능 성공",imgurl:"https://drive.goo
 //d2.set_img(3,{imgtitle:"junit 로그인아웃 기능",imgurl:"https://drive.google.com/file/d/1h52AMhgyWn5DshSbwbvh7WA-V2cdciJn/view?usp=drive_link",imglog:"",sourceurl:""})
 
 d2.set_content("2.4 테스트케이스를 결과보고서")
-d2.set_img(3,{imgtitle:"경계값분석테스트 실행",imgurl:"https://drive.google.com/file/d/1tsl4V8wYNmczvIkl_4kJ1IoWJRTep7YZ/view?usp=drive_link",imglog:"테스트케이스를 결과보고서 작성합니다.",sourceurl:"https://docs.google.com/document/d/167JnTRnJ9u-jXaOaEs79HJLqgj8bYDsoTxbKFn9orOE/edit?usp=drive_link"})
+d2.set_img(3,{imgtitle:"경계값분석테스트 실행",imgurl:"https://drive.google.com/file/d/1tsl4V8wYNmczvIkl_4kJ1IoWJRTep7YZ/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/167JnTRnJ9u-jXaOaEs79HJLqgj8bYDsoTxbKFn9orOE/edit?usp=drive_link"})
 
-d2.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
+///d2.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d2)
 
 // menu3 =============================================================
@@ -81,24 +81,24 @@ d3.set_img(0,{imgtitle:"회원DAO implements",imgurl:"https://drive.google.com/f
 d3.set_img(0,{imgtitle:"mapper",imgurl:"https://drive.google.com/file/d/1ZQT__uY3rLsK5mi8YfUejSv66_PgUrFd/view?usp=drive_link",imglog:"SQL을 호출하기 위한 인터페이스",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/config/memberMapper.xml"})
 
 d3.set_content("3.1 회원가입 구현")//서브타이틀
-d3.set_img(1,{imgtitle:"회원가입UI",imgurl:"https://drive.google.com/file/d/1aCujHkP2b5LUJ3HlFOttNuNQOVemhxL2/view?usp=drive_link",imglog:"회원가입소스코드",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/signup.html"})
+d3.set_img(1,{imgtitle:"회원가입UI",imgurl:"https://drive.google.com/file/d/1aCujHkP2b5LUJ3HlFOttNuNQOVemhxL2/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/signup.html"})
 d3.set_img(1,{imgtitle:"회원가입html",imgurl:"https://drive.google.com/file/d/19ixGT4L4-K9imKZbVGy6rmKrJeehgVh-/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"회원가입jquery",imgurl:"https://drive.google.com/file/d/1cwRVjp8yc64bL57telaUA2Sb8307PCah/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"회원가입컨트롤러",imgurl:"https://drive.google.com/file/d/1_At2JZis4P_g7oOeiZP4PwVD-bQJ014S/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"ID 중복 컨트롤러",imgurl:"https://drive.google.com/file/d/1TxNjbeBKSKCi_cgxCpCO5VWSM6Lhdxo7/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"회원가입서비스",imgurl:"https://drive.google.com/file/d/1NyARHHrAFX9ePvKkSr7wKd0OM4fgftc7/view?usp=drive_link",imglog:"",sourceurl:""})
-d3.set_img(1,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuqY6cvEZW3CpUAifGGVUtI_4uBSTNe/view?usp=drive_link",imglog:"회원인터페이스",sourceurl:""})
+d3.set_img(1,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuqY6cvEZW3CpUAifGGVUtI_4uBSTNe/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"회원가입DAOImp",imgurl:"https://drive.google.com/file/d/1l4So1uHEDP7k-V7JULrNOvEKdaYPRzdC/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(2,{imgtitle:"mapper",imgurl:"https://drive.google.com/file/d/1ZQT__uY3rLsK5mi8YfUejSv66_PgUrFd/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"회원가입성공",imgurl:"https://drive.google.com/file/d/1Qyx4wbbb60_UZGvlPJYxvI5yTyUCL3v8/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(1,{imgtitle:"회원가입 데이터",imgurl:"https://drive.google.com/file/d/1GTTXpvgB2Zkdq3lRFKbn2Y_HJvWx23_e/view?usp=drive_link",imglog:"",sourceurl:""})
 
 d3.set_content("3.2 회원 로그인 구현")
-d3.set_img(2,{imgtitle:"로그인UI",imgurl:"https://drive.google.com/file/d/11LJ8Qvu-fFbu6HV6XlHq-AbJmFD35zlm/view?usp=drive_link",imglog:"로그인소스코드",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/index.html"})
+d3.set_img(2,{imgtitle:"로그인UI",imgurl:"https://drive.google.com/file/d/11LJ8Qvu-fFbu6HV6XlHq-AbJmFD35zlm/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/index.html"})
 d3.set_img(2,{imgtitle:"로그인html",imgurl:"https://drive.google.com/file/d/1jr8t3pOV5Hu5vPpesVJtxxWPbP3K0SkF/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(2,{imgtitle:"로그인jquery",imgurl:"https://drive.google.com/file/d/1QhhihsNyFs7rYMFsPY5cwu1aRbZC7AnS/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(2,{imgtitle:"로그인컨트롤러",imgurl:"https://drive.google.com/file/d/17J0NvFweXz4i5wr0jSGbhz0NQKS5BCDT/view?usp=drive_link",imglog:"",sourceurl:""})
-d3.set_img(2,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuqY6cvEZW3CpUAifGGVUtI_4uBSTNe/view?usp=drive_link",imglog:"회원인터페이스",sourceurl:""})
+d3.set_img(2,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuqY6cvEZW3CpUAifGGVUtI_4uBSTNe/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(2,{imgtitle:"로그인DAOImp",imgurl:"https://drive.google.com/file/d/1smL1WZUqGRCgcvEEgSNUXMIASVpIaLyU/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(2,{imgtitle:"로그인mapper",imgurl:"https://drive.google.com/file/d/1ZQT__uY3rLsK5mi8YfUejSv66_PgUrFd/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(2,{imgtitle:"로그인성공로그",imgurl:"https://drive.google.com/file/d/1LE13mDU7CKHM7ErAp7sk-rEEO8SKwLO4/view?usp=drive_link",imglog:"",sourceurl:""})
@@ -118,7 +118,7 @@ d3.set_img(4,{imgtitle:"회원리스트UI",imgurl:"https://drive.google.com/file
 d3.set_img(4,{imgtitle:"회원리스트html",imgurl:"https://drive.google.com/file/d/1jr8t3pOV5Hu5vPpesVJtxxWPbP3K0SkF/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(4,{imgtitle:"회원리스트jquery",imgurl:"https://drive.google.com/file/d/13nMusZzPoZnqVRA911fXOhsMwmkNiJ-P/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(4,{imgtitle:"회원리스트컨트롤러",imgurl:"https://drive.google.com/file/d/1mz-xWgRb0AywdlnMpIjpnF__aEza81sO/view?usp=drive_link",imglog:"",sourceurl:""})
-d3.set_img(4,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuqY6cvEZW3CpUAifGGVUtI_4uBSTNe/view?usp=drive_link",imglog:"회원인터페이스",sourceurl:""})
+d3.set_img(4,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuqY6cvEZW3CpUAifGGVUtI_4uBSTNe/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(4,{imgtitle:"회원리스트DAOImp",imgurl:"https://drive.google.com/file/d/1l4So1uHEDP7k-V7JULrNOvEKdaYPRzdC/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(4,{imgtitle:"mapper",imgurl:"https://drive.google.com/file/d/1ZQT__uY3rLsK5mi8YfUejSv66_PgUrFd/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(4,{imgtitle:"회원리스트log",imgurl:"https://drive.google.com/file/d/1i5wTdVwhiPihFcJ63Mb-67OXqZw6lW59/view?usp=drive_link",imglog:"",sourceurl:""})
@@ -132,7 +132,7 @@ d3.set_img(4,{imgtitle:"회원리스트log",imgurl:"https://drive.google.com/fil
 // d3.set_content("결과보고서 작성")
 // d3.set_img(6,{imgtitle:"",imgurl:"",imglog:"",sourceurl:""})
 
-d3.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
+//d3.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d3)
 
 // menu4 =============================================================
@@ -142,10 +142,10 @@ d4.set_img(0,{imgtitle:"BatchConfiguration",imgurl:"https://drive.google.com/fil
 d4.set_img(0,{imgtitle:"BatchSchedule",imgurl:"https://drive.google.com/file/d/1IUY6ZCwU_es7oxZG6jcl-36SkMtenqy7/view?usp=drive_link",imglog:"5분마다 스케쥴링",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/job/BatchSchedule.java"})
 
 d4.set_content("4.2 배치스케줄구현")//서브타이틀
-d4.set_img(1,{imgtitle:"Spring 배치 확인",imgurl:"https://drive.google.com/file/d/1apKc-xopTFQ3-VPa6xxojI06jePVONW8/view?usp=drive_link",imglog:"",sourceurl:""})
+//d4.set_img(1,{imgtitle:"Spring 배치 확인",imgurl:"https://drive.google.com/file/d/1apKc-xopTFQ3-VPa6xxojI06jePVONW8/view?usp=drive_link",imglog:"",sourceurl:""})
 d4.set_img(1,{imgtitle:"5분마다 스케쥴링",imgurl:"https://drive.google.com/file/d/10zLsHFhZ-R0SwVbkJhICsx0pUOsnsY62/view?usp=drive_link",imglog:"",sourceurl:""})
-d4.set_img(1,{imgtitle:"배치DB table",imgurl:"https://drive.google.com/file/d/1HDfRXfqxkHhtujtwy84-gaLkVU3RCJBR/view?usp=drive_link",imglog:"DB에 배치테이블",sourceurl:""})
+d4.set_img(1,{imgtitle:"배치DB table",imgurl:"https://drive.google.com/file/d/1HDfRXfqxkHhtujtwy84-gaLkVU3RCJBR/view?usp=drive_link",imglog:"",sourceurl:""})
 
-d4.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
+//d4.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d4)
 
