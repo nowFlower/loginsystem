@@ -70,7 +70,7 @@ d2.set_img(3,{imgtitle:"junit 로그인 기능 실패",imgurl:"https://drive.goo
 d2.set_img(3,{imgtitle:"junit 로그인아웃 기능",imgurl:"https://drive.google.com/file/d/1h52AMhgyWn5DshSbwbvh7WA-V2cdciJn/view?usp=drive_link",imglog:"",sourceurl:""})
 
 d2.set_content("테스트케이스를 결과보고서 작성합니다.")
-d2.set_img(4,{imgtitle:"경계값분석테스트 실행",imgurl:"",imglog:"",sourceurl:"https://docs.google.com/document/d/167JnTRnJ9u-jXaOaEs79HJLqgj8bYDsoTxbKFn9orOE/edit?usp=drive_link"})
+d2.set_img(4,{imgtitle:"경계값분석테스트 실행",imgurl:"https://drive.google.com/file/d/1tsl4V8wYNmczvIkl_4kJ1IoWJRTep7YZ/view?usp=drive_link",imglog:"",sourceurl:"https://docs.google.com/document/d/167JnTRnJ9u-jXaOaEs79HJLqgj8bYDsoTxbKFn9orOE/edit?usp=drive_link"})
 d2.set_img(4,{imgtitle:"Id/pw Service테스트 성공",imgurl:"https://drive.google.com/file/d/1NVNav5jBg6BI0ibMbvvpHL6VfRKRvZ-u/view?usp=drive_link",imglog:"경계값분석테스트 실행",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/test/java/com/itg/examp/test/MemberserviceTests.java"})
 d2.set_img(4,{imgtitle:"로그인 DAO테스트 실패",imgurl:"https://drive.google.com/file/d/1W-KuKCcs8bTJk2FDAb_eav4wRnXO4LHt/view?usp=sharing",imglog:"경계값분석테스트 실행",sourceurl:""})
 d2.set_img(4,{imgtitle:"로그인 DAO테스트 성공",imgurl:"https://drive.google.com/file/d/1h52AMhgyWn5DshSbwbvh7WA-V2cdciJn/view?usp=sharing",imglog:"경계값분석테스트 실행",sourceurl:""})
@@ -80,6 +80,7 @@ data_sets.push(d2)
 
 // menu3 =============================================================
 let d3 = new DataSet("서버프로그램구현")//메인타이틀
+d3.set_content("서버프로그램구현 작성합니다.")
 d3.set_img(0,{imgtitle:"index화면 UI",imgurl:"https://drive.google.com/file/d/1v3tNGLHPjCoeB9I02jSL-faYoPR4kixj/view?usp=sharing",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/resources/static/index.html"})
 d3.set_img(0,{imgtitle:"회원DTO",imgurl:"https://drive.google.com/file/d/1sYWSqs7VrqxjtgsldYjEWQ-ZqXs7CrkZ/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/dto/MemberDTO.java"})
 d3.set_img(0,{imgtitle:"회원Controller",imgurl:"https://drive.google.com/file/d/1J9SGM3KSm2CKQ7k9hUtUWWqbNAtJVrsQ/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/MemberController.java"})
@@ -153,6 +154,7 @@ data_sets.push(d3)
 
 // menu4 =============================================================
 let d4 = new DataSet("배치프로그램구현")//메인타이틀
+d4.set_content("배치프로그램구현 작성합니다.")
 d4.set_img(0,{imgtitle:"BatchConfiguration",imgurl:"https://drive.google.com/file/d/1DVe79t54A_V36CATWF9hCTN2Vnm8PU2T/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/job/BatchConfiguration.java"})
 d4.set_img(0,{imgtitle:"BatchSchedule",imgurl:"https://drive.google.com/file/d/1IUY6ZCwU_es7oxZG6jcl-36SkMtenqy7/view?usp=drive_link",imglog:"5분마다 스케쥴링",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/job/BatchSchedule.java"})
 d4.set_img(0,{imgtitle:"배치DB table",imgurl:"https://drive.google.com/file/d/1HDfRXfqxkHhtujtwy84-gaLkVU3RCJBR/view?usp=drive_link",imglog:"",sourceurl:"https://github.com/nowFlower/loginsystem/blob/main/LoginSystem/src/main/java/com/itg/examp/job/BatchSchedule.java"})
@@ -167,5 +169,5 @@ d4.set_img(1,{imgtitle:"배치스케줄구현",imgurl:"https://drive.google.com/
 //d4.set_img(2,{imgtitle:"5분마다 스케쥴링",imgurl:"https://drive.google.com/file/d/1IUY6ZCwU_es7oxZG6jcl-36SkMtenqy7/view?usp=drive_link",imglog:"",sourceurl:""})
 
 
-d3.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
+d4.set_fill("사용자와 프로그램간에 인터렉티브한 로그인 세션 설정")//사용자 에필로그
 data_sets.push(d4)
