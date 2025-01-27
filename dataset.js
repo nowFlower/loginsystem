@@ -116,7 +116,7 @@ d3.set_img(3,{imgtitle:"로그아웃UI",imgurl:"https://drive.google.com/file/d/
 //d3.set_img(3,{imgtitle:"로그아웃html",imgurl:"",imglog:"",sourceurl:""})
 d3.set_img(3,{imgtitle:"로그아웃jquery",imgurl:"https://drive.google.com/file/d/1djxJmD3GyS0vBScQu-whQGRYDnoxrP8b/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(3,{imgtitle:"로그아웃컨트롤러",imgurl:"https://drive.google.com/file/d/1tVKIn15qpMzQelKwX-WUCWSkO1CT2teb/view?usp=drive_link",imglog:"",sourceurl:""})
-//d3.set_img(3,{imgtitle:"회원DAO",imgurl:"https://drive.google.com/file/d/1dnuqY6cvEZW3CpUAifGGVUtI_4uBSTNe/view?usp=sharing",imglog:"회원인터페이스",sourceurl:""})
+//d3.set_img(3,{imgtitle:"회원DAO",imgurl:"",imglog:"회원인터페이스",sourceurl:""})
 //d3.set_img(3,{imgtitle:"로그아웃DAOImp",imgurl:"",imglog:"",sourceurl:""})
 //d3.set_img(3,{imgtitle:"mapper",imgurl:"https://drive.google.com/file/d/1ZQT__uY3rLsK5mi8YfUejSv66_PgUrFd/view?usp=drive_link",imglog:"",sourceurl:""})
 d3.set_img(3,{imgtitle:"로그아웃log",imgurl:"https://drive.google.com/file/d/1W-KuKCcs8bTJk2FDAb_eav4wRnXO4LHt/view?usp=drive_link",imglog:"",sourceurl:""})
