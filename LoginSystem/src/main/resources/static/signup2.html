@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f9f9f9;
+		}
+
+		h2 {
+			padding-left: 10%;
+			color: #333;
+		}
+
+		#memform {
+			width: 1200px;
+			margin: 0 auto;
+			padding: 50px;
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		fieldset {
+			border: 1px solid #ddd;
+			padding: 20px;
+			border-radius: 8px;
+		}
+
+		legend {
+			font-size: 1.2em;
+			font-weight: bold;
+			color: #555;
+		}
+
+		label {
+			display: inline-block;
+			width: 100px;
+			font-weight: bold;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 200px;
+			padding: 8px;
+			margin: 5px 0;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+		}
+
+		button {
+			padding: 8px 12px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+
+		#btn_contain {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.error {
+			color: red;
+			font-size: 0.9em;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>로그인시스템 회원가입</h2>
+	<form id="memform">
+		<fieldset>
+			<legend>회원정보입력</legend>
+			<p>
+				<label for="mid">ID</label>
+				<input type="text" id="mid" name="mid" required />
+				<button type="button" id="idChk">ID 중복체크</button>
+				<span id="idChkResult" class="error"></span>
+			</p>
+			<p>
+				<label for="mpw">비밀번호</label>
+				<input type="password" id="mpw" name="mpw" required />
+			</p>
+			<p>
+				<label for="mpwConfirm">비번 확인</label>
+				<input type="password" id="mpwConfirm" name="mpwConfirm" required />
+				<span id="pwMatchResult" class="error"></span>
+			</p>
+		</fieldset>
+		<div id="btn_contain">
+			<input type="submit" value="회원가입">
+			<input type="reset" value="다시입력">
+		</div>
+	</form>
+
+	<script>
+		// DOM 요소 캐싱
+		const $mid = $("#mid");
+		const $idChk = $("#idChk");
+		const $idChkResult = $("#idChkResult");
+		const $mpw = $("#mpw");
+		const $mpwConfirm = $("#mpwConfirm");
+		const $pwMatchResult = $("#pwMatchResult");
+		const $memform = $("#memform");
+
+		// ID 중복체크 함수
+		const checkIdAvailability = async () => {
+			const mid = $mid.val().trim();
+			if (!mid) {
+				$idChkResult.text("ID를 입력해주세요.").addClass("error");
+				return false;
+			}
+
+			try {
+				const response = await fetch("/member/idchk", {
+					method: "POST",
+					headers: {"Content-Type": "application/json"},
+					body: JSON.stringify({mid})
+				});
+				const data = await response.json();
+				if (data.available) {
+					$idChkResult.text("사용 가능한 ID입니다.").removeClass("error").addClass("success");
+					return true;
+				} else {
+					$idChkResult.text("이미 사용 중인 ID입니다.").addClass("error");
+					return false;
+				}
+			} catch (error) {
+				console.error("중복체크 오류:", error);
+				$idChkResult.text("중복체크 중 오류가 발생했습니다.").addClass("error");
+				return false;
+			}
+		};
+
+		// 비밀번호 일치 여부 확인
+		const checkPasswordMatch = () => {
+			const pw = $mpw.val();
+			const pwConfirm = $mpwConfirm.val();
+			if (pw === pwConfirm) {
+				$pwMatchResult.text("비밀번호가 일치합니다.").removeClass("error").addClass("success");
+				return true;
+			} else {
+				$pwMatchResult.text("비밀번호가 일치하지 않습니다.").addClass("error");
+				return false;
+			}
+		};
+
+		// ID 중복체크 버튼 클릭 이벤트
+		$idChk.on("click", async () => {
+			await checkIdAvailability();
+		});
+
+		// ID 입력값 변경 시 중복체크 초기화
+		$mid.on("input", () => {
+			$idChkResult.text("").removeClass("error success");
+		});
+
+		// 비밀번호 입력값 변경 시 일치 여부 확인
+		$mpwConfirm.on("input", checkPasswordMatch);
+
+		// 폼 제출 이벤트
+		$memform.on("submit", async (e) => {
+			e.preventDefault();
+
+			// ID 중복체크 확인
+			const isIdAvailable = await checkIdAvailability();
+			if (!isIdAvailable) return;
+
+			// 비밀번호 일치 여부 확인
+			const isPasswordMatch = checkPasswordMatch();
+			if (!isPasswordMatch) return;
+
+			// FormData 생성
+			const formData = new FormData($memform[0]);
+
+			// 서버로 데이터 전송
+			try {
+				const response = await fetch("/member/signup", {
+					method: "POST",
+					body: formData
+				});
+				const data = await response.json();
+				if (data.message === "회원가입") {
+					alert("회원가입이 성공하였습니다.");
+					location.href = "/"; // 홈으로 이동
+				} else {
+					alert(data.message);
+				}
+			} catch (error) {
+				console.error("회원가입 오류:", error);
+				alert("회원가입 중 오류가 발생했습니다.");
+			}
+		});
+	</script>
+</body>
+
+</html>

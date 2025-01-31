@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<h2 style="padding-left: 10%;">로그인시스템 회원가입</h2>
+	<form id="memform" style="width: 1200px; margin: 0 auto; padding: 50px;">
+		<fieldset>
+			<legend>회원정보입력</legend>
+			<p><label>ID</label> <input type="text" id="mid" name="mid" />&nbsp;&nbsp;&nbsp;<button type="button"
+					id="idChk" value="false"> ID 중복체크</button></p>
+			<p><label>비밀번호</label> <input type="password" id="mpw" name="mpw" />
+				<label>비번 확인</label><input type="password" id="mpwConfirm" name="mpwConfirm" />
+
+		</fieldset>
+		<p id="btn_contain" style="padding-left: 542px;">
+			<input type="submit" value="회원가입">
+			<input type="reset" value="다시입력">
+		</p>
+	</form>
+
+	<script>
+		//중복체크
+		async function chk() {
+			if (!mid) {
+				alert("ID를 입력해주세요.");
+				return false;
+			}
+			const logindate = {mid: $("#mid").val()} //id 값
+			const res = await fetch("/member/idchk", {method: "post", headers: {"Content-type": "application/json"}, body: JSON.stringify(logindate)}); // 요청 보냄
+			const data = await res.json(); // JSON 응답 처리
+			return data;
+		}
+		// ID 중복체크 버튼 클릭 이벤트
+		$("#idChk").click(async (evt) => {
+			evt.preventDefault(); // 기본 동작 방지
+			const data = await chk();
+			if (data) {
+				$("#idChk").val("true");
+				alert("사용 가능한 ID입니다.");
+			} else {
+				alert("이미 사용 중인 ID입니다.");
+				$("#idChk").val("false");
+			}
+		});
+		// ID 입력값이 변경될 때마다 중복체크 수행
+		$("#mid").on("input", async () => {
+		    $("#idChk").val("false"); // ID가 변경되면 중복체크 상태를 초기화
+		    const data = await chk();
+		    if (data) {
+		        $("#idChk").val("true");
+		        alert("사용 가능한 ID입니다.");
+		    } else {
+		        alert("이미 사용 중인 ID입니다.");
+		        $("#idChk").val("false");
+		    }
+		});
+
+
+		//submit시 json 형식으로 데이터 넘기기
+		$("#memform").on("submit", async (evt) => {
+			evt.preventDefault();      //기본 이벤트 삭제
+
+			// ID 중복체크 여부 확인
+			if ($("#idChk").val() !== "true") {
+				alert("ID 중복체크를 해주세요.");
+				return false;
+			}
+			// 비밀번호 일치 여부 확인
+			if ($("#mpw").val() !== $("#mpwConfirm").val()) {
+				alert("비밀번호가 일치하지 않습니다.");
+				return false;
+			}
+
+			const payload = new FormData($("#memform")[0]);//FormData 제이쿼리 바로 넣을수 없음 
+
+			//서버의 데이터 전송
+			//ajax 실시간으로 넘겨줬는데, 실시간 통신을 fetch 내장되어 있음 삽입해
+			const res = await fetch("/member/signup", {method: "post", body: payload});
+			//res 서버가 응답할때 까지 기다림(promise 대기)
+			const data = await res.json(); //서버 응답시 json 데이터로 수신
+			if (data.message == "회원가입") {
+				alert("회원가입이 성공하였습니다.")
+				location.href = "/"  // "/index.html"
+			}
+			else alert(data.message);
+
+			return false;
+		});
+
+	</script>
+</body>
+
+</html>
